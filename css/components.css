@@ -1,0 +1,941 @@
+/* ==========================================================================
+   CSS3 SHOWCASE - BALLET UCB
+   04. SPECIALIZED NATIVE COMPONENTS
+   ========================================================================== */
+
+/* --- 1. TABLA DE REPERTORIO RESPONSIVA --- */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin: var(--space-lg) 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background: var(--bg-surface);
+  font-size: 0.95rem;
+}
+
+caption {
+  caption-side: top;
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: var(--color-gold);
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  font-weight: 600;
+}
+
+thead tr {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  color: #ffffff;
+}
+
+th {
+  padding: 1rem;
+  font-family: var(--font-title);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-gold);
+}
+
+td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  vertical-align: middle;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+tbody tr:hover {
+  background-color: rgba(212, 175, 55, 0.08);
+}
+
+tfoot tr {
+  background: rgba(128, 0, 32, 0.2);
+  font-weight: 700;
+  color: var(--text-primary);
+  border-top: 2px solid var(--border-color);
+}
+
+/* --- 2. CONTROLES DE MEDICIÓN NATIVOS HTML5 (<progress> y <meter>) --- */
+/* Estilos para <progress> */
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 12px;
+  border: none;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+progress::-webkit-progress-bar {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+}
+
+progress::-webkit-progress-value {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-gold) 100%);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+progress::-moz-progress-bar {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-gold) 100%);
+  border-radius: var(--radius-full);
+}
+
+/* Estilos para <meter> */
+meter {
+  width: 100%;
+  height: 14px;
+  border-radius: var(--radius-full);
+  margin-top: 4px;
+  display: block;
+}
+
+meter::-webkit-meter-bar {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  border: none;
+}
+
+/* Colores de aforo según nivel en meter */
+meter::-webkit-meter-optimum-value {
+  background: linear-gradient(90deg, #10b981 0%, #34d399 100%); /* Verde - Aforo Optimo */
+  border-radius: var(--radius-full);
+}
+
+meter::-webkit-meter-suboptimum-value {
+  background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%); /* Amarillo - Medio */
+  border-radius: var(--radius-full);
+}
+
+meter::-webkit-meter-even-less-optimum-value {
+  background: linear-gradient(90deg, #ef4444 0%, #f87171 100%); /* Rojo - Aforo Alto */
+  border-radius: var(--radius-full);
+}
+
+/* --- 3. ACORDEONES Y DESPLEGABLES NATIVOS (<details> y <summary>) --- */
+details {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  backdrop-filter: var(--glass-backdrop);
+}
+
+details[open] {
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-md), var(--shadow-gold);
+}
+
+summary {
+  padding: 1rem 1.25rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none; /* Ocultar flecha nativa */
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  transition: background-color var(--transition-fast);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: '✦';
+  font-size: 0.9rem;
+  color: var(--color-gold);
+  transition: transform var(--transition-bounce);
+}
+
+details[open] summary::after {
+  transform: rotate(45deg);
+  color: var(--color-rose);
+}
+
+summary:hover {
+  background-color: rgba(212, 175, 55, 0.08);
+}
+
+details > *:not(summary) {
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  animation: fadeIn var(--transition-fast) ease-in;
+}
+
+details ul {
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+}
+
+details ul li {
+  margin-bottom: var(--space-xs);
+}
+
+/* --- 4. GLOSARIO DE DANZA (LISTAS DE DEFINICIÓN <dl>, <dt>, <dd>, <dfn>) --- */
+dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+dt {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  color: var(--color-gold);
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+dt::before {
+  content: '❖';
+  font-size: 0.75rem;
+  color: var(--color-primary-light);
+}
+
+dfn {
+  font-style: normal;
+  font-weight: 700;
+}
+
+dd {
+  background: var(--bg-card);
+  border-left: 3px solid var(--color-primary);
+  padding: var(--space-md);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-left: 0;
+}
+
+/* --- 5. GALERÍA MULTIMEDIA (<figure>, <picture>, <audio>, <video>) --- */
+#multimedia article {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+figure {
+  margin: var(--space-md) 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+figure img, 
+figure video {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal);
+}
+
+figure img:hover {
+  transform: scale(1.015);
+}
+
+figcaption {
+  margin-top: var(--space-sm);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+}
+
+audio {
+  width: 100%;
+  max-width: 550px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+/* --- 6. FORMULARIO COMPLETO DE AUDICIONES --- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-backdrop);
+}
+
+legend {
+  font-family: var(--font-title);
+  color: var(--color-gold);
+  padding: 0.2rem 0.8rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+}
+
+label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  background: var(--bg-surface);
+}
+
+/* Personalización del Range Slider (Flexibilidad) */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: calc(100% - 60px);
+  height: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  outline: none;
+  vertical-align: middle;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+  transition: transform var(--transition-fast);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Personalización Color Picker */
+input[type="color"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid var(--border-color);
+  width: 50px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background: none;
+  padding: 2px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 4px;
+}
+
+/* Botones de Formulario */
+button[type="submit"],
+button[type="reset"] {
+  padding: 0.85rem 1.8rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-bounce);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button[type="submit"] {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(128, 0, 32, 0.4);
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(128, 0, 32, 0.6), 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+button[type="reset"] {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+button[type="reset"]:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+/* --- 7. DIÁLOGO EMERGENTE NATIVO (<dialog>) --- */
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-surface);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  max-width: 500px;
+  width: 90%;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(128, 0, 32, 0.5);
+  z-index: 2000;
+  animation: modalPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+dialog::backdrop {
+  background: rgba(10, 13, 20, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+dialog h3 {
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-title);
+}
+
+dialog button {
+  margin-top: var(--space-md);
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+dialog button:hover {
+  background: var(--color-primary-light);
+  box-shadow: var(--shadow-gold);
+}
+
+/* --- 8. SECCIÓN HERO BANNER DE IMPACTO --- */
+.hero-banner {
+  position: relative;
+  min-height: 520px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(128, 0, 32, 0.3);
+  border: 1px solid var(--border-color);
+  background: url('../assets/images/hero-bg.jpg') center/cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 13, 20, 0.88) 0%,
+    rgba(128, 0, 32, 0.75) 50%,
+    rgba(10, 13, 20, 0.92) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 850px;
+  padding: var(--space-xl) var(--space-md);
+  color: #ffffff;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.35rem 1.2rem;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+  backdrop-filter: blur(4px);
+}
+
+.hero-title {
+  font-family: var(--font-title);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-md);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(180deg, #ffffff 0%, #f3e5ab 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto var(--space-lg) auto;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, var(--color-gold) 0%, #b8860b 100%);
+  color: #0d0d11;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  transition: all var(--transition-bounce);
+}
+
+.btn-hero-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
+  color: #000000;
+}
+
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  transition: all var(--transition-bounce);
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  transform: translateY(-3px);
+}
+
+/* --- 9. BANNER DE ESTADÍSTICAS E IMPACTO --- */
+.stats-banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-item {
+  text-align: center;
+  padding: var(--space-sm);
+  border-right: 1px solid var(--border-glass);
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-number {
+  font-family: var(--font-title);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* --- 10. CARRUSEL DE IMÁGENES INTERACTIVO JS --- */
+.carousel-section {
+  margin-bottom: var(--space-xl);
+}
+
+.carousel-section-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.carousel-section-header h2 {
+  font-size: 2.2rem;
+  color: var(--text-primary);
+}
+
+.carousel-section-header p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg), 0 0 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  outline: none;
+}
+
+.carousel-container:focus-visible {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.4);
+}
+
+.carousel-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.carousel-image-box {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  background: #000;
+}
+
+.carousel-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease;
+}
+
+.carousel-slide.active .carousel-image-box img {
+  transform: scale(1.03);
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 2rem 1.5rem 2rem;
+  background: linear-gradient(0deg, rgba(10, 13, 20, 0.95) 0%, rgba(10, 13, 20, 0.6) 70%, transparent 100%);
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.carousel-tag {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  background: var(--color-primary);
+  color: #ffffff;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-caption h3 {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  color: var(--color-gold);
+  margin-bottom: 0.3rem;
+}
+
+.carousel-caption p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  max-width: 750px;
+}
+
+/* Botones flotantes de navegación (Anterior / Siguiente) */
+.carousel-btn-prev,
+.carousel-btn-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(10, 13, 20, 0.6);
+  border: 1px solid var(--border-color);
+  color: var(--color-gold);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  backdrop-filter: blur(6px);
+  transition: all var(--transition-bounce);
+}
+
+.carousel-btn-prev {
+  left: 15px;
+}
+
+.carousel-btn-next {
+  right: 15px;
+}
+
+.carousel-btn-prev:hover,
+.carousel-btn-next:hover {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-gold);
+  transform: translateY(-50%) scale(1.12);
+  box-shadow: 0 4px 15px rgba(128, 0, 32, 0.6);
+}
+
+/* Barra inferior de controles (Dots, Contador, Play/Pausa) */
+.carousel-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.5rem;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  padding: 0;
+  transition: all var(--transition-fast);
+}
+
+.carousel-dot:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
+
+.carousel-dot.active {
+  background: var(--color-gold);
+  width: 28px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+.carousel-info-group {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.carousel-counter {
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
+}
+
+.carousel-play-pause {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all var(--transition-fast);
+}
+
+.carousel-play-pause:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-color: var(--color-gold);
+}
+
+/* --- 11. BANNER CTA DE AUDICIONES --- */
+.cta-banner {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--bg-surface) 100%);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cta-banner h2 {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.cta-banner p {
+  color: var(--text-secondary);
+  max-width: 650px;
+  margin: 0 auto var(--space-lg) auto;
+  font-size: 1.05rem;
+}
+
+/* Responsividad para el carrusel y hero */
+@media (max-width: 768px) {
+  .hero-banner {
+    min-height: 420px;
+  }
+
+  .carousel-image-box {
+    height: 320px;
+  }
+
+  .carousel-btn-prev,
+  .carousel-btn-next {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .carousel-caption {
+    padding: 1rem;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1.2rem;
+  }
+
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid var(--border-glass);
+    padding-bottom: var(--space-md);
+  }
+
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+}
+

@@ -1,0 +1,108 @@
+/* ==========================================================================
+   CSS3 SHOWCASE - BALLET UCB
+   01. VARIABLES & DESIGN SYSTEM (TOKENS DE DISEÑO)
+   ========================================================================== */
+
+:root {
+  /* --- PALETA TEATRAL & DANZA (MODO OSCURO - DEFAULT) --- */
+  --color-primary: #800020;         /* Borgoña / Crimson Ballet */
+  --color-primary-light: #a31638;   /* Borgoña claro para hover */
+  --color-primary-dark: #4a0011;    /* Terciopelo borgoña profundo */
+  
+  --color-gold: #d4af37;            /* Oro de Telón / Adornos de Gala */
+  --color-gold-light: #f3e5ab;      /* Destello de luz dorada */
+  --color-rose: #e6b8c8;            /* Rosa Zapatillas de Ballet */
+  --color-rose-glow: rgba(230, 184, 200, 0.25);
+
+  --color-success: #10b981;         /* Verde disponibilidad alta */
+  --color-warning: #f59e0b;         /* Amarillo ocupación media */
+  --color-danger: #ef4444;          /* Rojo ocupación baja / agotado */
+
+  /* --- FONDOS Y CRISTALERÍA (DARK THEME) --- */
+  --bg-body: #0a0d14;               /* Escenario nocturno */
+  --bg-surface: #121722;            /* Superficie principal */
+  --bg-card: rgba(22, 29, 45, 0.7); /* Tarjeta Glassmorphism */
+  --bg-card-hover: rgba(30, 41, 62, 0.85);
+  --bg-header: rgba(10, 13, 20, 0.85);
+  --bg-input: rgba(15, 23, 42, 0.8);
+
+  /* --- TEXTO & TIPOGRAFÍA --- */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-gold: #f3e5ab;
+  --text-inverse: #0f172a;
+
+  /* --- BORDES Y SOMBRAS --- */
+  --border-color: rgba(212, 175, 55, 0.2);
+  --border-focus: #d4af37;
+  --border-glass: rgba(255, 255, 255, 0.1);
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 20px rgba(128, 0, 32, 0.4);
+  --shadow-gold: 0 0 15px rgba(212, 175, 55, 0.3);
+
+  /* --- FUENTES --- */
+  --font-title: 'Cinzel', serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-code: 'Fira Code', monospace;
+
+  /* --- ESPACIADO --- */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+
+  /* --- RADIOS DE BORDE --- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* --- TRANSICIONES --- */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* --- BLUR Y EFECTOS CSS3 --- */
+  --glass-backdrop: blur(14px);
+}
+
+/* --- MODO CLARO (LIGHT THEME SHOWCASE) --- */
+[data-theme="light"] {
+  --color-primary: #800020;
+  --color-primary-light: #9e1b32;
+  --color-primary-dark: #5c0017;
+  
+  --color-gold: #b8860b;
+  --color-gold-light: #745600;
+  --color-rose: #d99fb3;
+  --color-rose-glow: rgba(128, 0, 32, 0.1);
+
+  --bg-body: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.98);
+  --bg-header: rgba(248, 250, 252, 0.9);
+  --bg-input: #ffffff;
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-gold: #856404;
+  --text-inverse: #ffffff;
+
+  --border-color: rgba(128, 0, 32, 0.18);
+  --border-focus: #800020;
+  --border-glass: rgba(0, 0, 0, 0.08);
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 20px rgba(128, 0, 32, 0.08);
+  --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(128, 0, 32, 0.15);
+  --shadow-gold: 0 0 15px rgba(184, 134, 11, 0.2);
+}

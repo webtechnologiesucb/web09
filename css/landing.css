@@ -1,0 +1,75 @@
+/* Estilos extra de la landing web09: widgets interactivos con librerias de web08 */
+.countdown-banner {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  background: linear-gradient(135deg, rgba(128,0,32,.85), rgba(10,13,20,.95));
+}
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-gold, #D4AF37);
+  flex-wrap: wrap;
+}
+#countdown span { display: block; }
+#countdown small { font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; }
+.widget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+.widget-card {
+  background: rgba(20,26,38,.75);
+  border: 1px solid var(--border-color, rgba(212,175,55,.25));
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.widget-card h3 { margin-top: 0; color: #D4AF37; }
+#mapa { height: 320px; border-radius: 12px; }
+#tabla-eventos { width: 100%; color: inherit; }
+#tabla-eventos th, #tabla-eventos td { padding: .5rem .75rem; }
+.chart-box { max-width: 720px; margin: 0 auto; }
+#form-registro input, #form-registro select {
+  width: 100%; margin-bottom: .75rem; padding: .6rem .8rem;
+  border-radius: 8px; border: 1px solid var(--border-color, #333);
+  background: rgba(0,0,0,.25); color: inherit;
+}
+#form-registro .error { color: #ff8080; font-size: .8rem; }
+#registro-msg { margin-top: .75rem; font-weight: 600; }
+#popover-aviso {
+  display: none;
+  max-width: 300px;
+  margin: 1rem auto 0;
+  padding: .85rem 1.1rem;
+  background: rgba(20,26,38,.95);
+  border: 1px solid rgba(212,175,55,.5);
+  border-left: 4px solid #D4AF37;
+  border-radius: 10px;
+  color: #e8e6df;
+  font-size: .95rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+#popover-aviso strong { color: #D4AF37; }
+#popover-aviso.show { display: block; opacity: 1; }
+
+#clima {
+  font-size: 1rem;
+  line-height: 1.6;
+  background: linear-gradient(135deg, rgba(128,0,32,.35), rgba(10,13,20,.9));
+  border: 1px solid var(--border-color, rgba(212,175,55,.4));
+  border-left: 4px solid #D4AF37;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  color: #e8e6df;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+#clima:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(0,0,0,.5); }
+#clima strong { color: #D4AF37; font-size: 1.15rem; letter-spacing: .03em; }
+#clima em { color: #9aa5b8; font-size: .85rem; }
+#clima .temp { font-size: 2.2rem; font-weight: 800; color: #fff; }

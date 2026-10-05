@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballet UCB | Portal Animado 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/landing.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <header role="banner" class="animate-header">
+        <div class="header-top">
+            <div class="header-titles">
+                <h1>Ballet UCB</h1>
+                <p><small>Universidad Católica Boliviana "San Pablo" | La Paz - Bolivia</small></p>
+            </div>
+            <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Cambiar tema">
+                <span id="theme-icon">🌙</span> <span id="theme-text">Modo Oscuro</span>
+            </button>
+        </div>
+        <nav aria-label="Navegación principal del sitio">
+            <button type="button" class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span class="nav-bars"><span></span><span></span><span></span></span> Menú
+            </button>
+            <ul>
+                <li><a href="#main-content" class="active">Inicio</a></li>
+                <li><a href="#sobre-nosotros">Nosotros</a></li>
+                <li><a href="#repertorio-destacado">Repertorio</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#registro">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+
+        <section class="hero-banner" aria-label="Bienvenida">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-badge">Temporada de Gala 2026</span>
+                <h2 class="hero-title">Pasión, Elegancia y Disciplina en el Escenario</h2>
+                <p class="hero-subtitle">El Ballet UCB combina técnica clásica, expresión contemporánea y patrimonio
+                    folclórico boliviano.</p>
+                <div class="hero-actions">
+                    <a href="#repertorio-destacado" class="btn-hero-primary"><span>Ver Temporada 2026</span> ➜</a>
+                    <a href="#registro" class="btn-hero-secondary"><span>Postular a Audiciones</span> 💃</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-banner" aria-label="Estadísticas">
+            <div class="stat-item"><span class="stat-number">15+</span><span class="stat-label">Años de
+                    Trayectoria</span></div>
+            <div class="stat-item"><span class="stat-number">50+</span><span class="stat-label">Obras
+                    Representadas</span></div>
+            <div class="stat-item"><span class="stat-number">30+</span><span class="stat-label">Bailarines</span></div>
+            <div class="stat-item"><span class="stat-number">12</span><span class="stat-label">Premios Nacionales</span>
+            </div>
+        </section>
+
+        <section class="countdown-banner" aria-label="Cuenta regresiva">
+            <h2>Audiciones 2026 comienzan en</h2>
+            <div id="countdown"></div>
+        </section>
+
+        <section id="sobre-nosotros" class="grid-section" data-aos="fade-up">
+            <div class="grid-layout grid-2-cols" style="align-items:center; gap:2rem;">
+                <article>
+                    <h2>Formación Artística de Excelencia</h2>
+                    <p>Fundado bajo el Departamento de Cultura de la UCB, nuestra compañía reúne a estudiantes y
+                        bailarines dedicados al estudio profundo de la danza.</p>
+                    <blockquote>
+                        <p>"La danza es el lenguaje oculto del alma."</p>
+                        <footer>— <cite>Dirección Artística Ballet UCB</cite></footer>
+                    </blockquote>
+                </article>
+                <figure><img src="assets/images/elenco-ucb.jpg" alt="Elenco UCB en ensayo"
+                        style="width:100%; border-radius:12px;"></figure>
+            </div>
+        </section>
+
+        <section id="galeria-carrusel" class="carousel-section">
+            <div class="carousel-section-header">
+                <h2>Galería de Producciones</h2>
+                <p>Carrusel JS vanilla heredado de web04.</p>
+            </div>
+            <div id="ballet-carousel" class="carousel-container" role="region" aria-label="Carrusel">
+                <div class="carousel-track-wrapper">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <div class="carousel-image-box"><img src="assets/images/carrusel-1.jpg"
+                                    alt="Lago de los Cisnes">
+                                <div class="carousel-caption"><span class="carousel-tag">Clásico</span>
+                                    <h3>El Lago de los Cisnes</h3>
+                                    <p>Gala inaugural con la suite completa de Tchaikovsky.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-image-box"><img src="assets/images/carrusel-2.jpg" alt="Contemporáneo">
+                                <div class="carousel-caption"><span class="carousel-tag">Contemporáneo</span>
+                                    <h3>Ecos del Silencio</h3>
+                                    <p>Obra neoclásica de movimiento fluido y luz cenital.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-image-box"><img src="assets/images/carrusel-3.jpg" alt="Punta">
+                                <div class="carousel-caption"><span class="carousel-tag">Técnica</span>
+                                    <h3>El Rigor de la Punta</h3>
+                                    <p>Horas de barra detrás de cada pirueta.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-image-box"><img src="assets/images/carrusel-4.jpg" alt="Luz escénica">
+                                <div class="carousel-caption"><span class="carousel-tag">Escenografía</span>
+                                    <h3>Soles de Primavera</h3>
+                                    <p>Montaje lumínico de alta intensidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn-prev" type="button" aria-label="Anterior">‹</button>
+                <button class="carousel-btn-next" type="button" aria-label="Siguiente">›</button>
+                <div class="carousel-controls-bar">
+                    <div class="carousel-dots"></div>
+                    <div class="carousel-info-group">
+                        <span class="carousel-counter">1 / 4</span>
+                        <button class="carousel-play-pause" type="button"><span class="play-pause-icon">⏸</span><span
+                                class="play-pause-text">Pausar</span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="repertorio-destacado" data-aos="fade-up">
+            <h2 style="text-align:center;">Producciones Emblemáticas</h2>
+            <p style="text-align:center;"><input id="buscador-repertorio" type="search"
+                    placeholder="Buscar obra… (debounce Lodash)"
+                    style="padding:.5rem 1rem; border-radius:8px; width:min(420px,90%);"></p>
+            <div class="grid-layout grid-3-cols">
+                <article class="card" data-aos="flip-left"><img src="assets/images/caporales.jpg" alt="Caporales"
+                        style="width:100%; height:200px; object-fit:cover; border-radius:8px;">
+                    <h3>Folklore Estilizado: Caporales</h3>
+                    <p>Fusión académica con trajes artesanales.</p>
+                </article>
+                <article class="card" data-aos="flip-left" data-aos-delay="150"><img src="assets/images/cueca.jpg"
+                        alt="Cueca" style="width:100%; height:200px; object-fit:cover; border-radius:8px;">
+                    <h3>Suite de Cuecas Paceñas</h3>
+                    <p>Elegancia y galanteo tradicional neoclásico.</p>
+                </article>
+                <article class="card" data-aos="flip-left" data-aos-delay="300"><img src="assets/images/danzas.jpg"
+                        alt="Danzas" style="width:100%; height:200px; object-fit:cover; border-radius:8px;">
+                    <h3>Danzas Folclóricas</h3>
+                    <p>Recorrido por los valles y el altiplano.</p>
+                </article>
+            </div>
+            <div class="chart-box" style="margin-top:3rem;" data-aos="zoom-in">
+                <h3 style="text-align:center;">Asistencia por Obra (Chart.js)</h3>
+                <canvas id="grafico-asistencia"></canvas>
+            </div>
+        </section>
+
+        <section id="eventos" data-aos="fade-up">
+            <h2>Próximas Funciones (Axios + DataTables)</h2>
+            <table id="tabla-eventos" class="display" style="width:100%"></table>
+        </section>
+
+        <section class="widget-grid">
+            <div class="widget-card">
+                <h3>Clima en La Paz (API Open-Meteo)</h3>
+                <div id="clima">Cargando…</div>
+            </div>
+            <div class="widget-card">
+                <h3>Ubicación (Leaflet)</h3>
+                <div id="mapa"></div>
+            </div>
+        </section>
+
+        <section id="registro" data-aos="fade-up">
+            <h2>Registro a Audiciones (Validator.js + EmailJS)</h2>
+            <!-- Para activar el envío real: crea cuenta en emailjs.com y coloca tus IDs abajo -->
+            <form id="form-registro" style="max-width:520px;">
+                <label>Nombre completo<input type="text" name="nombre"></label>
+                <label>Correo electrónico<input type="email" name="email"></label>
+                <label>Obra de interés
+                    <select name="obra">
+                        <option>El Lago de los Cisnes</option>
+                        <option>Ecos del Silencio</option>
+                        <option>Caporales Estilizados</option>
+                    </select>
+                </label>
+                <label><input type="checkbox" id="acepta"> Acepto el reglamento de audiciones</label>
+                <button type="submit" class="btn-hero-primary" style="border:none; cursor:pointer;">Enviar
+                    registro</button>
+                <p id="registro-msg"></p>
+            </form>
+        </section>
+
+        <section class="cta-banner" data-aos="zoom-in">
+            <div class="cta-content">
+                <h2>¿Quieres formar parte del Elenco 2026?</h2>
+                <button type="button" id="btn-popover-aviso" class="btn-hero-primary"
+                    style="border:none; cursor:pointer;">Ver convocatoria</button>
+                <div id="popover-aviso" role="tooltip">
+                    <strong>Audiciones presenciales:</strong> 20 de Octubre de 2026, 09:00, Salón de Danza Campus San
+                    Pablo.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <p><small>&copy; 2026 Ballet de la Universidad Católica Boliviana "San Pablo".</small></p>
+        <p><small>Landing Page - HTML5, CSS3 y JS vanilla con librerías de web08 (Anime.js, GSAP, AOS, Chart.js, Axios,
+                Leaflet, DataTables, Day.js, Lodash, Flowbite, Validator.js, EmailJS).</small></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.12.0/validator.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.11/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.11/plugin/relativeTime.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.11/locale/es.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.3.0/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Configura tus credenciales de EmailJS (https://www.emailjs.com/)
+        const EMAILJS_PUBLIC_KEY = 'rHI64ITU_Ccug3zDK';
+        const EMAILJS_SERVICE_ID = 'service_q90f7ng';
+        const EMAILJS_TEMPLATE_ID = 'template_cgtyo99';
+        if (window.emailjs) emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    </script>
+    <script src="js/carousel.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+/* ==========================================================================
+   CSS3 SHOWCASE - BALLET UCB
+   03. LAYOUT & ARCHITECTURE
+   ========================================================================== */
+
+/* --- CABECERA PRINCIPAL CON STICKY NAVIGATION --- */
+header[role="banner"] {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg-header);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: var(--shadow-md);
+  transition: background-color var(--transition-normal);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: var(--space-md);
+}
+
+.header-titles {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.header-titles p {
+  margin-bottom: 0;
+}
+
+/* --- CONMUTADOR DE TEMA (DARK/LIGHT BOTÓN CSS3) --- */
+.theme-toggle-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--color-gold);
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all var(--transition-bounce);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-gold);
+  background: var(--bg-card-hover);
+}
+
+/* --- MENÚ DE NAVEGACIÓN PRINCIPAL --- */
+nav[aria-label="Navegación principal del sitio"] {
+  max-width: 1200px;
+  margin: var(--space-sm) auto 0 auto;
+  position: relative;
+}
+
+.nav-toggle {
+  display: none;
+  width: 100%;
+  margin: 0.5rem auto 0;
+  border: 1px solid var(--border-color);
+  background: rgba(10, 13, 20, 0.7);
+  color: var(--text-gold);
+  border-radius: var(--radius-full);
+  padding: 0.7rem 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-toggle .nav-bars {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+  width: auto;
+  height: auto;
+  background: none;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem var(--space-md);
+  list-style: none;
+  padding: var(--space-xs) 0;
+}
+
+nav ul li a {
+  display: block;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+nav ul li a:hover,
+nav ul li a:focus-visible {
+  color: var(--text-gold);
+  background: rgba(212, 175, 55, 0.12);
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateY(-1px);
+}
+
+nav ul li a.active,
+nav ul li a[aria-current="page"] {
+  color: var(--text-gold);
+  background: rgba(212, 175, 55, 0.22);
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+
+/* --- CONTENEDOR PRINCIPAL & SECCIONES --- */
+main#main-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+section {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+section:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+/* --- GRID DE SECCIÓN SOBRE NOSOTROS --- */
+#nosotros {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+#nosotros h2 {
+  grid-column: 1 / -1;
+}
+
+aside {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  backdrop-filter: var(--glass-backdrop);
+  height: fit-content;
+}
+
+aside h4 {
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: var(--space-xs);
+}
+
+aside ul {
+  list-style-type: '🩰 ';
+  padding-left: var(--space-md);
+}
+
+aside ul li {
+  margin-bottom: var(--space-sm);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* --- LISTAS ORDENADAS E HISTORIA --- */
+ol[type="I"] {
+  padding-left: var(--space-lg);
+  margin: var(--space-md) 0;
+}
+
+ol[type="I"] li {
+  margin-bottom: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+/* --- PIE DE PÁGINA NATIVO --- */
+footer[role="contentinfo"] {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  margin-top: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+}
+
+footer[role="contentinfo"] p {
+  margin-bottom: var(--space-xs);
+}
+
+/* --- RESPONSIVE LAYOUT (MEDIA QUERIES CSS3) --- */
+@media (max-width: 900px) {
+  #nosotros {
+    grid-template-columns: 1fr;
+  }
+
+  header[role="banner"] {
+    padding: var(--space-sm);
+  }
+
+  .header-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  nav[aria-label="Navegación principal del sitio"] {
+    width: 100%;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.2s ease;
+  }
+
+  nav[aria-label="Navegación principal del sitio"].is-open ul {
+    max-height: 600px;
+    opacity: 1;
+    padding: 0.5rem 0 0;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    width: 100%;
+    font-size: 0.82rem;
+    padding: 0.6rem 0.75rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: var(--space-lg) var(--space-md);
+  }
+}

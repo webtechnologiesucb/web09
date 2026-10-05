@@ -1,0 +1,7 @@
+[
+  { "obra": "El Lago de los Cisnes", "fecha": "2026-10-15", "lugar": "Teatro Municipal", "estado": "Confirmada", "asistencia": 850 },
+  { "obra": "Ecos del Silencio", "fecha": "2026-11-02", "lugar": "Auditorio UCB", "estado": "Confirmada", "asistencia": 420 },
+  { "obra": "Suite de Cuecas Paceñas", "fecha": "2026-11-20", "lugar": "Casa de la Cultura", "estado": "En gira", "asistencia": 610 },
+  { "obra": "Caporales Estilizados", "fecha": "2026-12-05", "lugar": "Teatro al Aire Libre", "estado": "Próximamente", "asistencia": 1200 },
+  { "obra": "Soles de Primavera", "fecha": "2027-01-18", "lugar": "Teatro Municipal", "estado": "Próximamente", "asistencia": 980 }
+]

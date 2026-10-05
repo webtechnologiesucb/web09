@@ -1,0 +1,76 @@
+/* ==========================================================================
+   CSS3 SHOWCASE - BALLET UCB
+   05. ANIMATIONS & KEYFRAMES
+   ========================================================================== */
+
+/* --- ENTRADA SUAVE (FADE IN) --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- ENTRADA DESDE ARRIBA (FADE IN DOWN) --- */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- ENTRADA POP-UP PARA DIÁLOGO (<dialog>) --- */
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* --- PULSO LUMINOSO (EFECTO DE DISPONIBILIDAD Y ADVERTENCIA) --- */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+/* --- DESTELLO / SHIMMER PARA ELEMENTOS DESTACADOS --- */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Clases utilitarias de animación */
+.animate-fade-in {
+  animation: fadeIn var(--transition-normal) ease-out forwards;
+}
+
+.animate-header {
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.badge-pulse {
+  animation: pulseGlow 2s infinite;
+}

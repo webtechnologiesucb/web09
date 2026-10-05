@@ -1,0 +1,241 @@
+/* ==========================================================================
+   CSS3 SHOWCASE - BALLET UCB
+   02. BASE STYLES & RESET
+   ========================================================================== */
+
+/* --- RESET & BOX MODELING --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  color-scheme: dark light;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(128, 0, 32, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* --- SCROLLBAR PERSONALIZADO CSS3 --- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-body);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--bg-body);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* --- SELECCIÓN DE TEXTO --- */
+::selection {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* --- ENLACES GENERALES & SALTO --- */
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color var(--transition-fast), text-shadow var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-rose);
+  text-shadow: 0 0 8px rgba(230, 184, 200, 0.4);
+}
+
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 20px;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 10px 18px;
+  z-index: 9999;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: top var(--transition-fast);
+  box-shadow: var(--shadow-lg);
+}
+
+.skip-link:focus {
+  top: 15px;
+}
+
+/* --- ENCABEZADOS Y TITULARES --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: var(--space-xs);
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+[data-theme="light"] h1 {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 70%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: var(--color-gold);
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--space-md);
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-gold) 0%, var(--color-primary) 50%, transparent 100%);
+  border-radius: var(--radius-full);
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: var(--color-rose);
+  margin-bottom: var(--space-sm);
+}
+
+[data-theme="light"] h3 {
+  color: var(--color-primary);
+}
+
+h4 {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+/* --- ELEMENTOS SEMÁNTICOS DE TEXTO (SHOWCASE HTML5/CSS3) --- */
+p {
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+
+strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+small {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+mark {
+  background: linear-gradient(120deg, rgba(212, 175, 55, 0.3) 0%, rgba(128, 0, 32, 0.4) 100%);
+  color: var(--text-gold);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+abbr[title] {
+  text-decoration: underline dotted var(--color-gold);
+  cursor: help;
+  position: relative;
+}
+
+blockquote {
+  position: relative;
+  padding: var(--space-lg) var(--space-xl);
+  margin: var(--space-lg) 0;
+  background: var(--bg-card);
+  border-left: 4px solid var(--color-gold);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-style: italic;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: var(--glass-backdrop);
+}
+
+blockquote::before {
+  content: '“';
+  font-family: var(--font-title);
+  font-size: 4rem;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  color: rgba(212, 175, 55, 0.2);
+  line-height: 1;
+}
+
+blockquote footer {
+  margin-top: var(--space-sm);
+  font-style: normal;
+  font-size: 0.95rem;
+  color: var(--color-rose);
+  text-align: right;
+}
+
+cite {
+  font-style: normal;
+  font-weight: 600;
+}
+
+time {
+  font-weight: 600;
+  color: var(--color-rose);
+  background: rgba(230, 184, 200, 0.1);
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+address {
+  font-style: normal;
+  line-height: 1.8;
+  background: var(--bg-card);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  backdrop-filter: var(--glass-backdrop);
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--border-color) 50%, transparent 100%);
+  margin: var(--space-2xl) 0;
+}
