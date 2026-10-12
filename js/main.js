@@ -1,3 +1,15 @@
+// 0. EmailJS - Configuración (migrado de index.html por seguridad)
+const EMAILJS_PUBLIC_KEY = 'TU_PUBLIC_KEY';
+const EMAILJS_SERVICE_ID = 'TU_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = 'TU_TEMPLATE_ID';
+
+// Cargar la librería EmailJS asíncronamente si no está cargada
+const emailjsScript = document.createElement('script');
+emailjsScript.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+emailjsScript.async = true;
+emailjsScript.onload = () => { window.emailjs && emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); };
+document.head.appendChild(emailjsScript);
+
 document.addEventListener('DOMContentLoaded', () => {
   const $ = (s) => document.querySelector(s);
 
